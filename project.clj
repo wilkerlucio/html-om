@@ -12,7 +12,7 @@
   :source-paths ["src/cljs"]
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2156"]
+                 [org.clojure/clojurescript "0.0-2197"]
                  [om "0.6.2"]]
 
   :plugins [[com.cemerick/austin "0.1.4"]
@@ -23,4 +23,9 @@
   :cljsbuild {:builds { :dev { :source-paths ["src/cljs"]
                                :compiler { :output-to "js/om-converter.js"
                                            :optimizations :whitespace
-                                           :pretty-print true}}}})
+                                           :pretty-print true}}
+                        :release { :source-paths ["src/cljs"]
+                                   :compiler { :output-to "js/om-converter.js"
+                                               :optimizations :advanced
+                                               :pretty-print false
+                                               :externs ["js/react-0.9.0.js"]}}}})
