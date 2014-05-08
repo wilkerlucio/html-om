@@ -5,7 +5,8 @@
 
 (enable-console-print!)
 
-(def initial-content "<form action=\"/order\" method=\"post\">
+(def initial-content
+"<form action=\"/order\" method=\"post\">
   <div class=\"row\">
     <div class=\"small-8\">
       <div class=\"row\">

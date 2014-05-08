@@ -63,7 +63,9 @@
 (def ^:private node-type-text 3)
 
 (defn- blank-child? [child]
-  (and (string? child) (string/blank? child)))
+  (or
+    (nil? child)
+    (and (string? child) (string/blank? child))))
 
 (defmulti read-html-node #(.-nodeType %))
 
@@ -74,6 +76,8 @@
   (let [tag (node-name node)
         children (node-children node)]
     (concat [(keyword tag) (node-attributes node)] (remove blank-child? (map read-html-node children)))))
+
+(defmethod read-html-node :default [_] nil)
 
 (defn- build-children [s]
   (let [div (node-create "div")]
