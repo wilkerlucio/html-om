@@ -21,6 +21,6 @@
   :repl-options {:init-ns om-converter.core}
 
   :cljsbuild {:builds { :dev { :source-paths ["src/cljs"]
-                               :compiler { :output-to "public/js/om-converter.js"
+                               :compiler { :output-to "js/om-converter.js"
                                            :optimizations :whitespace
                                            :pretty-print true}}}})

@@ -3,7 +3,6 @@
 /lib
 /classes
 /checkouts
-/public/js/om-converter.js
 /out
 pom.xml
 *.jar
