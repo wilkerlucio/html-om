@@ -21,7 +21,7 @@
     attr))
 
 (defn translate-attributes [attrs]
-  (apply merge (for [[k v] attrs] {(translate-attribute k) v})))
+  (apply merge {} (for [[k v] attrs] {(translate-attribute k) v})))
 
 (defn- translate [item level]
   (if (string? item)
@@ -31,8 +31,8 @@
       (apply str
              "("
              dom-id
-             " "
-             (translate-attributes (or attributes {}))
+             " #js "
+             (pr-str (translate-attributes (or attributes {})))
              (translate-children children (+ 1 level))
              ")"))))
 
