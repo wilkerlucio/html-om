@@ -15,4 +15,4 @@ pom.xml
 .crossover-cljs
 .repl
 .nrepl-port
-.om_converter.iml
+om_converter.iml
