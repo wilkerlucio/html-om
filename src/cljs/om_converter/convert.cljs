@@ -2,12 +2,12 @@
   (:require [clojure.string :as string]))
 
 (defn- id-from-tag [tag]
-  (str "dom/" (-> (str tag) (subs 1))))
+  (str "dom/" (name tag)))
 
 (defn- padding [n]
   (apply str (repeat (* n 2) " ")))
 
-(defn- translate [_ _])
+(declare translate)
 
 (defn- translate-children [children level]
   (if (empty? children)
